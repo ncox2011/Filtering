@@ -45,15 +45,28 @@ public class Filtering
 };
 
         List<string> descend = (from name in names
-                orderby name descending
-                select name).ToList();
+                                orderby name descending
+                                select name).ToList();
 
-        foreach (string n in descend){
+        foreach (string n in descend)
+        {
             Console.WriteLine(n);
         }
 
+// Build a collection of these numbers sorted in ascending order
+        List<int> numbers2 = new List<int>()
+{
+    15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+};
 
+    List<int> ascend = (from n in numbers2
+    orderby n
+    select n).ToList();
 
+    foreach (int num in ascend)
+    {
+        Console.WriteLine(num);
+    }
 
     }
 }
